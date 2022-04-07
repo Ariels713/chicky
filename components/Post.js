@@ -1,12 +1,26 @@
 import React from 'react'
 import styled from 'styled-components'
 import Layout from './layout/layout'
-function Post() {
+import { graphql } from 'gatsby'
+
+// export const query = graphql`
+//   {
+//     allContentfulAboutLauren {
+//       nodes {
+//         title
+//         slug
+//       }
+//     }
+//   }
+// `
+
+function Post({ data }) {
+  console.log('data', data)
   return (
     <>
       <Layout>
         <Wrapper>
-          <h1>testing</h1>
+          <h1>Testing</h1>
         </Wrapper>
       </Layout>
     </>
