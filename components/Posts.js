@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 import Layout from './layout/layout'
-import { graphql } from 'gatsby'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import { StaticImage } from 'gatsby-plugin-image'
 
-function Post({ data }) {
-  console.log(data)
+function Posts({ data }) {
   return (
     <>
       <Layout>
@@ -14,6 +14,7 @@ function Post({ data }) {
               <Title>{items.title}</Title>
 
               <Author>{items.author.name}</Author>
+              <GatsbyImage image={getImage(items.image)} />
             </div>
           ))}
         </Wrapper>
@@ -22,7 +23,7 @@ function Post({ data }) {
   )
 }
 
-export default Post
+export default Posts
 
 const Wrapper = styled.main`
   display: grid;
