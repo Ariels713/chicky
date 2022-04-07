@@ -3,24 +3,19 @@ import styled from 'styled-components'
 import Layout from './layout/layout'
 import { graphql } from 'gatsby'
 
-// export const query = graphql`
-//   {
-//     allContentfulAboutLauren {
-//       nodes {
-//         title
-//         slug
-//       }
-//     }
-//   }
-// `
-
 function Post({ data }) {
-  console.log('data', data)
+  console.log(data)
   return (
     <>
       <Layout>
         <Wrapper>
-          <h1>Testing</h1>
+          {data.nodes.map((items) => (
+            <div key={`items-${items.id}`}>
+              <Title>{items.title}</Title>
+
+              <Author>{items.author.name}</Author>
+            </div>
+          ))}
         </Wrapper>
       </Layout>
     </>
@@ -46,5 +41,7 @@ const FullBleed = styled.div`
 `
 
 const Title = styled.h1``
+
+const Author = styled.cite``
 
 const Copy = styled.p``

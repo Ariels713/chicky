@@ -6,15 +6,26 @@ export const query = graphql`
   {
     allContentfulAboutLauren {
       nodes {
+        id
         title
         slug
+        image {
+          gatsbyImage(width: 800)
+        }
+        author {
+          name
+          twitter
+        }
+        aboutDescription {
+          raw
+        }
       }
     }
   }
 `
 
 const IndexPage = ({ data }) => {
-  return <Post data={data} />
+  return <Post data={data.allContentfulAboutLauren} />
 }
 
 export default IndexPage
