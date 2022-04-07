@@ -127,7 +127,7 @@ const links = [
 
 // markup
 const IndexPage = () => {
-  return <h1>Hola Mudo</h1>
+  return <h1>Hola Mudo!</h1>
 }
 
 export default IndexPage
