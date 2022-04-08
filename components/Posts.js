@@ -14,7 +14,7 @@ function Posts({ post }) {
           image={getImage(post.image)}
           alt={post.author.name}
           className='fullBleed'
-          // objectPosition='50% 50%'
+          objectPosition='50% 50%'
         />
       </Wrapper>
     </>
@@ -27,7 +27,7 @@ const Wrapper = styled.main`
   display: grid;
   grid-template-columns:
     1fr
-    min(30ch, 100%)
+    min(70ch, 100%)
     1fr;
 
   & > * {
