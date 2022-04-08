@@ -16,7 +16,11 @@ export const query = graphql`
           twitter
         }
         image {
-          gatsbyImageData(height: 600, placeholder: DOMINANT_COLOR)
+          gatsbyImageData(
+            # height: 800
+            placeholder: DOMINANT_COLOR
+            layout: FULL_WIDTH
+          )
         }
         aboutDescription {
           raw
