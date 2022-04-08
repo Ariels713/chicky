@@ -14,7 +14,7 @@ function Posts({ post }) {
           image={getImage(post.image)}
           alt={post.author.name}
           className='fullBleed'
-          objectPosition='50% 50%'
+          // objectPosition='50% 50%'
         />
       </Wrapper>
     </>
