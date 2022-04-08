@@ -14,7 +14,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --brand: var(--gray-2);
+    --brand: var(--pink-7);
 
     --text1: var(--text1-dark);
     --text2: var(--text2-dark);

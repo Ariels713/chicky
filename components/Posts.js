@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 function Posts({ post }) {
-  console.log('%Post Data', 'color:dodgerblue', post)
   return (
     <>
       <Wrapper>
@@ -24,6 +23,7 @@ function Posts({ post }) {
 export default Posts
 
 const Wrapper = styled.main`
+  margin-block-start: 2rem;
   display: grid;
   grid-template-columns:
     1fr
@@ -39,8 +39,13 @@ const FullBleed = styled.div`
   grid-column: 1 / -1;
 `
 
-const Title = styled.h1``
+const Title = styled.h1`
+  color: var(--gray-3);
+`
 
-const Author = styled.cite``
+const Author = styled.cite`
+  margin-block-start: -1rem;
+  margin-block-end: 1rem;
+`
 
 const Copy = styled.p``

@@ -16,11 +16,7 @@ export const query = graphql`
           twitter
         }
         image {
-          gatsbyImageData(
-            # height: 800
-            placeholder: DOMINANT_COLOR
-            layout: FULL_WIDTH
-          )
+          gatsbyImageData(placeholder: DOMINANT_COLOR, layout: FULL_WIDTH)
         }
         aboutDescription {
           raw
@@ -33,12 +29,10 @@ export const query = graphql`
 const IndexPage = ({ data }) => {
   // Initial postData variable with data from Contentful
   const postData = data.allContentfulAboutLauren.nodes
-  console.log('%cpostData', 'color:deeppink', postData)
 
   return (
     <>
       <Layout>
-        {/* <Post data={data.allContentfulAboutLauren} /> */}
         {postData.map((post) => (
           <Posts post={post} key={post.id} />
         ))}
