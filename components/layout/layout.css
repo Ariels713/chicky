@@ -223,3 +223,6 @@ p {
   overflow-wrap: break-word;
   hyphens: auto;
 }
+.fullBleed {
+  grid-column: 1 / -1;
+}

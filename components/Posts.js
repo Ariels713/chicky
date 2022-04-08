@@ -1,24 +1,22 @@
 import React from 'react'
 import styled from 'styled-components'
-import Layout from './layout/layout'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
-import { StaticImage } from 'gatsby-plugin-image'
 
-function Posts({ data }) {
+function Posts({ post }) {
+  console.log('%Post Data', 'color:dodgerblue', post)
   return (
     <>
-      <Layout>
-        <Wrapper>
-          {data.nodes.map((items) => (
-            <div key={`items-${items.id}`}>
-              <Title>{items.title}</Title>
+      <Wrapper>
+        <Title>{post.title}</Title>
+        <Author>{post.author.name}</Author>
 
-              <Author>{items.author.name}</Author>
-              <GatsbyImage image={getImage(items.image)} />
-            </div>
-          ))}
-        </Wrapper>
-      </Layout>
+        <GatsbyImage
+          image={getImage(post.image)}
+          alt={post.author.name}
+          className='fullBleed'
+          objectPosition='50% 50%'
+        />
+      </Wrapper>
     </>
   )
 }

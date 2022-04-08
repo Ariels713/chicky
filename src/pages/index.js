@@ -1,7 +1,8 @@
 import React from 'react'
 import Posts from '../../components/Posts'
 import { graphql } from 'gatsby'
-import { StaticImage } from 'gatsby-plugin-image'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import Layout from '../../components/layout/layout'
 
 export const query = graphql`
   {
@@ -15,7 +16,7 @@ export const query = graphql`
           twitter
         }
         image {
-          gatsbyImageData(width: 1000, placeholder: DOMINANT_COLOR)
+          gatsbyImageData(height: 600, placeholder: DOMINANT_COLOR)
         }
         aboutDescription {
           raw
@@ -30,17 +31,14 @@ const IndexPage = ({ data }) => {
   const postData = data.allContentfulAboutLauren.nodes
   console.log('%cpostData', 'color:deeppink', postData)
 
-  function reducer(list, value) {
-    console.log('%clist', 'color:goldenrod', list)
-  }
-
-  let reducedData = postData.reduce(reducer, [])
-  console.log('%creducedData', 'color:dodgerblue', reducedData)
-
   return (
     <>
-      {/* <Post data={data.allContentfulAboutLauren} /> */}
-      {/* {<Posts />} */}
+      <Layout>
+        {/* <Post data={data.allContentfulAboutLauren} /> */}
+        {postData.map((post) => (
+          <Posts post={post} key={post.id} />
+        ))}
+      </Layout>
     </>
   )
 }
